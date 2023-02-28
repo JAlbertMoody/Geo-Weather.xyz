@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import Header from "./components/Header"
+import Map from "./components/Map"
+import CurrentWeather from "./components/CurrentWeather";
+import ForecastWeather from './components/ForecastWeather';
+import Footer from "./components/Footer"
 
 function App() {
+
+  const [coordinates, setCoordinates] = useState({
+    lat: 41.26,
+    lng: -95.93
+  });
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <Map setCoordinates={setCoordinates} />
+      <div className="Weather">
+          <CurrentWeather coordinates={coordinates}/>
+          <ForecastWeather coordinates={coordinates}/>
+      </div>
+      <Footer />
     </div>
   );
 }
+
 
 export default App;
