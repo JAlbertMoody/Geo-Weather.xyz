@@ -1,0 +1,68 @@
+/* color pallete
+--aero: #1AC5E0ff;
+--celestial-blue: #019BD8ff;
+--gunmetal: #323544ff;
+--gunmetal-2: #2D303Dff;
+--raisin-black: #1E202Bff;
+*/
+
+/*         HERO             */
+
+
+.Home--Hero {
+    background-image: url('/images/Hurricane.jpg');
+    background-size: cover;
+    background-position: center;
+    height: calc(100vh - 72px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+
+.Home--Hero > h1 {
+    font-size: 4.25rem;
+    text-align: center;
+    text-shadow: 2px 1px 5px rgb(17, 18, 24);
+    margin-bottom: 40px;
+}
+
+.Home--Hero > button {
+    color: white;
+    background: linear-gradient(45deg, #019BD8ff, rgb(26, 112, 224));;
+    font-size: 38px;
+    font-weight: bold;
+    padding: 18px 36px;
+    border-radius: 30px;
+    border: none;
+    margin-top: 6px;
+}
+
+.Home--Hero > button:hover {
+    padding: 21px 39px;
+    margin-top: 0;
+    border-radius: 35px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*          BODY               */
