@@ -62,23 +62,23 @@ function CurrentWeather({ coordinates }) {
       const cityName = (city ? `in ${city[0].name}` : `at ${coordinates.lat}, ${coordinates.lng}`)
       let windDir = ""
       if (windD < 22){
-        windDir = "S"
-      } else if (22 < windD < 68){
-        windDir = "SW"
-      } else if (68 < windD < 112){
-        windDir = "W"
-      } else if (112 < windD < 158){
-        windDir = "NW"
-      } else if (158 < windD < 202){
         windDir = "N"
-      } else if (202 < windD < 248){
+      } else if (22 < windD < 68){
         windDir = "NE"
-      } else if (248 < windD < 292){
+      } else if (68 < windD < 112){
         windDir = "E"
-      } else if (292 < windD < 338){
+      } else if (112 < windD < 158){
         windDir = "SE"
-      } else {
+      } else if (158 < windD < 202){
         windDir = "S"
+      } else if (202 < windD < 248){
+        windDir = "SW"
+      } else if (248 < windD < 292){
+        windDir = "W"
+      } else if (292 < windD < 338){
+        windDir = "NW"
+      } else {
+        windDir = "N"
       }
 
 

@@ -25,7 +25,7 @@ export default function Home() {
                     </div>
                     <div className="Home--Body--2">
                         <p>Instant weather reports from every corner of the globe. 
-                            Just one click away in the <Link to="/app">"App"</Link> tab</p>
+                                Just one click away in the <Link to="/app">"App"</Link> tab</p>
                     </div>
                     <div className="Home--Body--3">
                         <p>Save your favorite locations for later and 

@@ -12,7 +12,9 @@ export default function Header(){
                 <p> / </p>
                 <NavLink to="/maps">Maps</NavLink>
             </div>
-            <NavLink className="Header--About" to="/about">?</NavLink>
+            <div className="Header--About--Container">
+                <NavLink className="Header--About" to="/about">?</NavLink>
+            </div>
     
         </header>
     )    

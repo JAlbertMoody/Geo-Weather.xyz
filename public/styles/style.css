@@ -85,6 +85,10 @@ a.Header--Title.active {
     
 }
 
+.Header--About--Container {
+    padding-left: 159px;
+}
+
 .Header--About {
     font-size: 1.5rem;
     font-weight: bold;
@@ -133,6 +137,67 @@ a.Header--About.active {
     font-weight: italic;
     color: #323544ff;
 }
+
+
+/*         MAP PAGE             */
+
+
+.Maps {
+    width: 100%;
+    height: calc(100vh - 132px);
+    outline: 1px solid black;
+    padding: 0;
+    box-shadow: 0px 0px 15px 0px black;
+}
+
+.Maps--Container {
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+}
+
+.Maps--Dropdown {
+    position: absolute;
+    z-index: 2;
+    margin: 5px;
+    top: 78px;
+    right: 5px;
+}
+
+.Maps--Dropdown > * {
+    color: rgb(15, 15, 15);
+    font-size: 1.25rem;
+    font-weight: bold;
+    padding: 8px 16px;
+    border-radius: 5px;
+    outline: none;
+    border: 2px solid rgb(165, 163, 163);
+
+}
+
+
+.Maps--Dropdown > *:hover {
+    background-color: rgb(240, 240, 240);
+    cursor: pointer;
+    outline: none;
+    border: 2px solid rgb(165, 163, 163);
+
+}
+
+.Maps--Dropdown > *:active {
+    background-color:  rgb(240, 240, 240);
+    border: none;
+    outline: none;
+    border: 2px solid rgb(165, 163, 163);
+
+}
+
+
+
+
+
+
 
 
 
