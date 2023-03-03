@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+const apikey = process.env.REACT_APP_API_KEY; 
 
 
 function CurrentWeather({ coordinates }) {
@@ -8,8 +9,7 @@ function CurrentWeather({ coordinates }) {
   useEffect(() => {
     async function fetchWeatherData() {
         if (coordinates) {
-          const API_KEY = process.env.REACT_APP_API_KEY;
-          const URL = `https://api.openweathermap.org/data/2.5/weather?lat=${coordinates.lat}&lon=${coordinates.lng}&exclude=hourly,daily&appid=${API_KEY}`;
+          const URL = `https://api.openweathermap.org/data/2.5/weather?lat=${coordinates.lat}&lon=${coordinates.lng}&exclude=hourly,daily&appid=${apikey}`;
           try {
             const response = await fetch(URL);
             if (response.ok) {
@@ -31,8 +31,7 @@ function CurrentWeather({ coordinates }) {
   useEffect(() => {
     async function fetchCityName() {
       if (coordinates) {
-        const API_KEY = process.env.REACT_APP_API_KEY;
-        const URL = `https://api.openweathermap.org/geo/1.0/reverse?lat=${coordinates.lat}&lon=${coordinates.lng}&limit=1&appid=${API_KEY}`;
+        const URL = `https://api.openweathermap.org/geo/1.0/reverse?lat=${coordinates.lat}&lon=${coordinates.lng}&limit=1&appid=${apikey}`;
         try {
           const response = await fetch(URL);
           if (response.ok) {

@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
 import { MapContainer, TileLayer } from 'react-leaflet';
 
+const apikey = process.env.REACT_APP_API_KEY;
+
 export default function Maps() {
 
-  
-
-  const API_KEY = process.env.REACT_APP_API_KEY;
   const [selectedLayer, setSelectedLayer] = useState('temp_new');
-  const url = `https://tile.openweathermap.org/map/${selectedLayer}/{z}/{x}/{y}.png?appid=${API_KEY}`;
+  const url = `https://tile.openweathermap.org/map/${selectedLayer}/{z}/{x}/{y}.png?appid=${apikey}`;
 
   const handleLayerChange = (event) => {
     setSelectedLayer(event.target.value);

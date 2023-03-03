@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const API_KEY = process.env.REACT_APP_API_KEY; 
+const apikey = process.env.REACT_APP_API_KEY; 
 
 function Favorites() {
     
@@ -14,7 +14,7 @@ function Favorites() {
 
             for (let i = 0; i < favorites.length; i++) {
             const [lat, lng] = favorites[i].split(",");
-            const URL = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&exclude=hourly,daily&appid=${API_KEY}`;
+            const URL = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&exclude=hourly,daily&appid=${apikey}`;
             const response = await fetch(URL);
             const data = await response.json();
             weatherDataArr.push(data);
