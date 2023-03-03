@@ -28,7 +28,6 @@ function CurrentWeather({ coordinates }) {
   const [weatherData, setWeatherData] = useState(null);
   const [city, setCity] = useState(null);
 
-
   useEffect(() => {
     async function fetchWeatherData() {
         if (coordinates) {
@@ -51,7 +50,7 @@ function CurrentWeather({ coordinates }) {
     checkAPILimit();
   
 
-  }, [coordinates]);
+  }, [coordinates] );
 
   useEffect(() => {
     async function fetchCityName() {
@@ -176,7 +175,8 @@ function CurrentWeather({ coordinates }) {
         </div>
       );
     } else {
-      return <h1>Click Map To Get Weather Data</h1>;
+      return <h1 className='Current--Leftover'>Click Map To Get Weather Data</h1>;
+      
     }
   }
 
