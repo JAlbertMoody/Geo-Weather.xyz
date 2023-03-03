@@ -5,7 +5,7 @@ export default function Maps() {
 
   
 
-  const API_KEY = '203184ed50248b437c48b6b85828ae84';
+  const API_KEY = process.env.REACT_APP_API_KEY;
   const [selectedLayer, setSelectedLayer] = useState('temp_new');
   const url = `https://tile.openweathermap.org/map/${selectedLayer}/{z}/{x}/{y}.png?appid=${API_KEY}`;
 

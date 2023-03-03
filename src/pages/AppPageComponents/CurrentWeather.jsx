@@ -31,7 +31,7 @@ function CurrentWeather({ coordinates }) {
   useEffect(() => {
     async function fetchWeatherData() {
         if (coordinates) {
-          const API_KEY = '203184ed50248b437c48b6b85828ae84';
+          const API_KEY = process.env.REACT_APP_API_KEY;
           const URL = `https://api.openweathermap.org/data/2.5/weather?lat=${coordinates.lat}&lon=${coordinates.lng}&exclude=hourly,daily&appid=${API_KEY}`;
           try {
             const response = await fetch(URL);
@@ -55,7 +55,7 @@ function CurrentWeather({ coordinates }) {
   useEffect(() => {
     async function fetchCityName() {
       if (coordinates) {
-        const API_KEY = '203184ed50248b437c48b6b85828ae84';
+        const API_KEY = process.env.REACT_APP_API_KEY;
         const URL = `https://api.openweathermap.org/geo/1.0/reverse?lat=${coordinates.lat}&lon=${coordinates.lng}&limit=1&appid=${API_KEY}`;
         try {
           const response = await fetch(URL);

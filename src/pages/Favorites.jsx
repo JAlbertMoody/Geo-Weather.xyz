@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const API_KEY = '203184ed50248b437c48b6b85828ae84'; 
+const API_KEY = process.env.REACT_APP_API_KEY; 
 
 function Favorites() {
     
