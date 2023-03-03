@@ -59,7 +59,13 @@ function CurrentWeather({ coordinates }) {
       const windGust = weatherData.wind.gust;
       const windGustConverted = (weatherData.wind.gust * 2.23694).toFixed(0);
       
+      const windGustRender = (windGust ? windGustConverted : "0")
       const cityName = (city ? `in ${city[0].name}` : `at ${coordinates.lat}, ${coordinates.lng}`)
+
+      const icon = weatherData.weather[0].icon
+      const IconSrc = `http://openweathermap.org/img/wn/${icon}@2x.png` 
+
+
       let windDir = ""
       if (windD < 22){
         windDir = "N"
@@ -83,30 +89,36 @@ function CurrentWeather({ coordinates }) {
 
 
       return (
-        <div>
-            <h1 className="CurrentWeather--Header">Current Weather {cityName}</h1>
-            <div className="CurrentWeather--Body">
-              <div className="CurrentWeather--SubHeader">
-                  <h1>{temperature} &deg;F</h1>
-                  <h3>Feels Like: {feelsLike} &deg;F</h3>
-                  <h2>{description}</h2>
+        <div className="Weather">
+          <div className="Weather--Container">
+            <div className="Weather--1">
+              <h1>Current Weather {cityName}</h1>
+            </div>
+            <div className="Weather--2">
+              <p className='Weather--2--Header'>{temperature}&deg;</p>
+              <p className='Weather--2--Body'>Feels Like: {feelsLike}&deg;</p>
+            </div>
+            <div className="Weather--3">
+              <div className='Weather--3--Icon--Container'>
+                <img src={IconSrc} alt="Weather Icon"/>
               </div>
-              <div>
-                <div className="CurrentWeather--Extra">
-                  <div className="CurrentWeather--Extra1">
-                      <p>Cloud Cover: {cloudCover} %</p>
-                      <p>Humidity: {humidity} %</p>
-                      <p>Pressure: {pressure} inHg</p>
-                  </div>
-                  <div className="CurrentWeather--Wind">
-                      <p>Wind:</p>
-                      <p className='CurrentWeather--Wind1'>{windDir} {windSpeed} mph</p>
-                      <p>{windGust ? `Gusts: ${windGustConverted} mph` : "Gusts: none"}</p>
-                  </div>
-                </div>
+              <p className="Weather--3--Description">{description}</p>
+            </div>
+            <div className="Weather--4">
+              <div className='Weather--4--Container'>
+                <p>Humidity: {humidity}%</p>
+                <p>Pressure: {pressure} inHg</p>
+                <p>Cloud Cover: {cloudCover}%</p>
               </div>
             </div>
-            
+            <div className="Weather--5">
+              <div className='Weather--5--Container'>
+                <p>Wind</p>
+                <h3>{windDir} {windSpeed} mph</h3>
+                <p>Gusts: {windGustRender} mph</p>
+              </div>
+            </div>
+          </div>
         </div>
       );
     } else {
@@ -115,9 +127,9 @@ function CurrentWeather({ coordinates }) {
   }
 
   return (
-    <div className="CurrentWeather">
+    <>
       <DisplayWeatherData />
-    </div>
+    </>
   );
 }
 

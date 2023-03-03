@@ -13,9 +13,9 @@ function AppPage() {
   return (
     <div className="App">
       <Map setCoordinates={setCoordinates} />
-      <div className="Weather">
+      <>
           <CurrentWeather coordinates={coordinates}/>
-      </div>
+      </>
     </div>
   );
 }
