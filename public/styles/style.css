@@ -134,7 +134,7 @@ a.Header--About.active {
 .Footer--text {
     font-size: 1rem;
     font-weight: italic;
-    color: #323544ff;
+    color: rgb(224, 224, 224);
 }
 
 
