@@ -1,8 +1,33 @@
 import React, { useState, useEffect } from 'react';
 
+function checkAPILimit() {
+
+  let apiUsage = JSON.parse(localStorage.getItem('apiUsage')) || { count: 0, timestamp: 0 };
+  
+  let now = Date.now();
+  let hourInMillis = 60 * 60 * 1000;
+  if (now - apiUsage.timestamp > hourInMillis) {
+    apiUsage.count = 0;
+    apiUsage.timestamp = now;
+  }
+  
+  if (apiUsage.count >= 250) {
+    alert('Sorry, you have exceeded the API limit for this hour. Please try again later.');
+    return false;
+  }
+  
+  apiUsage.count++;
+  localStorage.setItem('apiUsage', JSON.stringify(apiUsage));
+  
+  return true;
+}
+
+checkAPILimit()
+
 function CurrentWeather({ coordinates }) {
   const [weatherData, setWeatherData] = useState(null);
   const [city, setCity] = useState(null);
+
 
   useEffect(() => {
     async function fetchWeatherData() {
@@ -23,6 +48,9 @@ function CurrentWeather({ coordinates }) {
         }
       }
     fetchWeatherData();
+    checkAPILimit();
+  
+
   }, [coordinates]);
 
   useEffect(() => {
@@ -62,9 +90,6 @@ function CurrentWeather({ coordinates }) {
         localStorage.setItem("favorites", JSON.stringify(updatedFavorites));
       }
     }
-
-    console.log(city)
-    console.log(weatherData)
 
 
     if (weatherData) {
