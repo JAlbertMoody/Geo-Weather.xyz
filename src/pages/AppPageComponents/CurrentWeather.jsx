@@ -63,6 +63,9 @@ function CurrentWeather({ coordinates }) {
       }
     }
 
+    console.log(city)
+    console.log(weatherData)
+
 
     if (weatherData) {
       const temperature = ((weatherData.main.temp - 273.15) * 1.8 + 32).toFixed(1);
@@ -77,7 +80,7 @@ function CurrentWeather({ coordinates }) {
       const windGustConverted = (weatherData.wind.gust * 2.23694).toFixed(0);
       
       const windGustRender = (windGust ? windGustConverted : "0")
-      const cityName = (city ? `in ${city[0].name}` : `at ${coordinates.lat}, ${coordinates.lng}`)
+      const cityName = (city && city.length ? `in ${city[0].name}` : `at ${coordinates.lat}, ${coordinates.lng}`)
 
       const icon = weatherData.weather[0].icon
       const IconSrc = `http://openweathermap.org/img/wn/${icon}@2x.png` 

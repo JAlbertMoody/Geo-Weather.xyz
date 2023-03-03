@@ -27,16 +27,33 @@
     grid-column: 1 / 5;
     grid-row: 1;
     background-color: rgb(25, 26, 34);
-    padding: 10px;
+    padding: 10px 20px;
     display: flex;
     align-items: center;
-    justify-content: start;
+    justify-content: space-between;
 }
 
 .Favorite--1 > h1 {
     margin: 0;
     font-size: 36px;
     font-size: fit-content;
+}
+
+.Favorite--1 > button {
+    font-size: 24px;
+    font-weight: bold;
+    padding: 8px 16px;
+    border-radius: 12px;
+    background: rgb(17, 18, 24);
+    color: #2D303D;
+    border: none;
+  }
+
+.Favorite--1 > button:hover {
+    cursor: pointer;
+    background: #1E202B;
+    color: #019BD8;
+
 }
 
 .Favorite--2 {
@@ -91,7 +108,6 @@
     font-size: 20px;
     font-weight: bold;
 }
-
 
 
 .Favorite--4 {

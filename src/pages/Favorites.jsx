@@ -1,50 +1,62 @@
 import { useState, useEffect } from "react";
 
-const API_KEY = '203184ed50248b437c48b6b85828ae84';
+
+const API_KEY = '203184ed50248b437c48b6b85828ae84'; 
 
 function Favorites() {
-  const [weatherData, setWeatherData] = useState([]);
-  const [favorites, setFavorites] = useState(JSON.parse(localStorage.getItem("favorites")) || []);
+    
+    const [weatherData, setWeatherData] = useState([]);
+    const [favorites, setFavorites] = useState(JSON.parse(localStorage.getItem("favorites")) || []);
 
-  useEffect(() => {
-    async function fetchData() {
-      try {
-        const weatherDataArr = [];
+    useEffect(() => {
+        async function fetchData() {
+        try {
+            const weatherDataArr = [];
 
-        for (let i = 0; i < favorites.length; i++) {
-          const [lat, lng] = favorites[i].split(",");
-          const URL = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&exclude=hourly,daily&appid=${API_KEY}`;
-          const response = await fetch(URL);
-          const data = await response.json();
-          weatherDataArr.push(data);
+            for (let i = 0; i < favorites.length; i++) {
+            const [lat, lng] = favorites[i].split(",");
+            const URL = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&exclude=hourly,daily&appid=${API_KEY}`;
+            const response = await fetch(URL);
+            const data = await response.json();
+            weatherDataArr.push(data);
+            }
+
+            setWeatherData(weatherDataArr);
+        } catch (error) {
+            console.error(error);
+        }
         }
 
-        setWeatherData(weatherDataArr);
-      } catch (error) {
-        console.error(error);
-      }
+        fetchData();
+    }, [favorites]);
+
+    const removeFavorite = (index) => {
+        const updatedFavorites = [...favorites];
+        updatedFavorites.splice(index, 1);
+        localStorage.setItem("favorites", JSON.stringify(updatedFavorites));
+        setFavorites(updatedFavorites);
+    };
+
+    if (!favorites.length) {
+        return (
+                <div className="No--Favorites">
+                    <h1>No Favorites</h1>
+                    <p>Click to "Add to Favorites" button in the "App" component to get started</p>
+                </div>
+            )
     }
 
-    fetchData();
-  }, [favorites]);
 
-  if (!favorites.length) {
-    return (
-            <div className="No--Favorites">
-                <h1>No Favorites</h1>
-                <p>Click to "Add to Favorites" button in the "App" component to get started</p>
-            </div>
-        )
-  }
 
   return (
     <div>
-      {weatherData.map((data) => (
+      {weatherData.map((data, index) => (
         <div key={data.name}>
             <div className="Favorite">
                 <div className="Favorite--Container">
                     <div className="Favorite--1">
-                        <h1>{data.name}</h1>
+                        <h1>{(data.name ? data.name : `( ${data.coord.lat} , ${data.coord.lon} )`)}</h1>
+                        <button onClick={() => removeFavorite(index)}>Remove</button>
                     </div>
                     <div className="Favorite--2">
                         <p className="Favorite--2--Header">{((data.main.temp - 273.15) * 1.8 + 32).toFixed(1)}&deg;</p>
