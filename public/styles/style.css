@@ -17,12 +17,11 @@ body {
     padding: 0px;
     background-color: #1E202Bff;
     color: whitesmoke;
-    max-height: 100vh;
+    /* max-height: 100vh; */
 }
 
 main {
     min-height: calc(100vh - 132px);
-    min-height: calc(100dv - 132px);
     
 }
 
