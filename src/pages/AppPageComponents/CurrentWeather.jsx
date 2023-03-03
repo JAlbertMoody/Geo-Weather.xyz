@@ -47,6 +47,23 @@ function CurrentWeather({ coordinates }) {
   }, [coordinates])
 
   function DisplayWeatherData() {
+    const [favorites, setFavorites] = useState([]);
+
+    useEffect(() => {
+      const savedFavorites = JSON.parse(localStorage.getItem("favorites")) || [];
+      setFavorites(savedFavorites);
+    }, []);
+
+    function addToFavorites() {
+      const newFavorite = `${coordinates.lat},${coordinates.lng}`;
+      if (!favorites.includes(newFavorite) && favorites.length < 11) {
+        const updatedFavorites = [...favorites, newFavorite];
+        setFavorites(updatedFavorites);
+        localStorage.setItem("favorites", JSON.stringify(updatedFavorites));
+      }
+    }
+
+
     if (weatherData) {
       const temperature = ((weatherData.main.temp - 273.15) * 1.8 + 32).toFixed(1);
       const feelsLike = ((weatherData.main.feels_like - 273.15) * 1.8 + 32).toFixed(1);
@@ -87,37 +104,46 @@ function CurrentWeather({ coordinates }) {
         windDir = "N"
       }
 
+      const isFavorite = favorites.includes(`${coordinates.lat},${coordinates.lng}`);
+      const buttonText = isFavorite ? "Saved" : "Add to Favorites";
+
 
       return (
-        <div className="Weather">
-          <div className="Weather--Container">
-            <div className="Weather--1">
-              <h1>Current Weather {cityName}</h1>
-            </div>
-            <div className="Weather--2">
-              <p className='Weather--2--Header'>{temperature}&deg;</p>
-              <p className='Weather--2--Body'>Feels Like: {feelsLike}&deg;</p>
-            </div>
-            <div className="Weather--3">
-              <div className='Weather--3--Icon--Container'>
-                <img src={IconSrc} alt="Weather Icon"/>
+        <div>
+          <div className="Weather">
+            <div className="Weather--Container">
+              <div className="Weather--1">
+                <h1>Current Weather {cityName}</h1>
               </div>
-              <p className="Weather--3--Description">{description}</p>
-            </div>
-            <div className="Weather--4">
-              <div className='Weather--4--Container'>
-                <p>Humidity: {humidity}%</p>
-                <p>Pressure: {pressure} inHg</p>
-                <p>Cloud Cover: {cloudCover}%</p>
+              <div className="Weather--2">
+                <p className='Weather--2--Header'>{temperature}&deg;</p>
+                <p className='Weather--2--Body'>Feels Like: {feelsLike}&deg;</p>
+              </div>
+              <div className="Weather--3">
+                <div className='Weather--3--Icon--Container'>
+                  <img src={IconSrc} alt="Weather Icon"/>
+                </div>
+                <p className="Weather--3--Description">{description}</p>
+              </div>
+              <div className="Weather--4">
+                <div className='Weather--4--Container'>
+                  <p>Humidity: {humidity}%</p>
+                  <p>Pressure: {pressure} inHg</p>
+                  <p>Cloud Cover: {cloudCover}%</p>
+                </div>
+              </div>
+              <div className="Weather--5">
+                <div className='Weather--5--Container'>
+                  <p>Wind</p>
+                  <h3>{windDir} {windSpeed} mph</h3>
+                  <p>Gusts: {windGustRender} mph</p>
+                </div>
               </div>
             </div>
-            <div className="Weather--5">
-              <div className='Weather--5--Container'>
-                <p>Wind</p>
-                <h3>{windDir} {windSpeed} mph</h3>
-                <p>Gusts: {windGustRender} mph</p>
-              </div>
-            </div>
+          </div>
+          <div className='Weather--Button--Container'>
+              <button className={isFavorite ? "Weather--Button" : "Weather--Button--1"} 
+              onClick={addToFavorites}>{buttonText}</button>
           </div>
         </div>
       );
