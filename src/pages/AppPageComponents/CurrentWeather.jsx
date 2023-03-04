@@ -82,7 +82,7 @@ function CurrentWeather({ coordinates }) {
       const cityName = (city && city.length ? `in ${city[0].name}` : `at ${coordinates.lat}, ${coordinates.lng}`)
 
       const icon = weatherData.weather[0].icon
-      const IconSrc = `http://openweathermap.org/img/wn/${icon}@2x.png` 
+      const IconSrc = `https://openweathermap.org/img/wn/${icon}@2x.png` 
 
 
       let windDir = ""

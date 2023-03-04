@@ -63,7 +63,7 @@ function Favorites() {
                     </div>
                     <div className="Favorite--3">
                         <div className="Favorite--3--Icon--Container">
-                            <img src={`http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`} 
+                            <img src={`https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`} 
                             alt="Weather Icon"
                             className="Favorite--3--Icon"/>
                         </div>
