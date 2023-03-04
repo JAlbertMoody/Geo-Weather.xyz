@@ -35,6 +35,8 @@
     margin-bottom: 40px;
 }
 
+
+
 .Weather--Container {
     display: grid;
     grid-template-columns: 250px 200px 300px;
@@ -77,7 +79,6 @@
 
 .Weather--2--Body {
     margin: 0;
-    /* color: #1AC5E0ff; */
     font-size: 24px;
 }
 
@@ -208,6 +209,93 @@
     margin-right: auto;
     margin-top: 40px;
 }
+
+@media (max-width: 767px) {
+    .Weather {
+        width: 100vw;
+        height: 365px;
+        margin-left: 0px;
+        margin-right: 0px;
+        overflow: visible;
+    }
+
+    .Weather--Container {
+        display: grid;
+        grid-template-columns: 33.3% 26.7% 40%;
+        grid-template-rows: 85px 140px 140px;
+    }
+
+
+    .Weather--1 > h1 {
+        margin: 5px;
+        font-size: 2rem;
+    }
+
+    .Weather--2--Header {
+        margin: 0;
+        color: #019BD8ff;
+        font-size: 2.5rem;
+    }
+    
+    .Weather--2--Body {
+        margin: 0;
+        margin-top: 10px;
+        font-size: 1rem;
+    }
+
+    .Weather--3--Icon--Container {
+        width: 85px;
+        height: 85px;
+        border-radius: 10px;
+        margin: 0px 20px;
+    }
+    
+    
+    .Weather--3--Description {
+        font-size: 1.2rem;
+    }
+
+    .Weather--4--Container > p {
+        font-size: 1rem;
+        margin: 2px;
+    }
+
+    .Weather--5--Container > p {
+        margin: 2px;
+        font-size: 1rem;
+    }
+    
+    .Weather--5--Container > h3 {
+        margin: 2px;
+        color: #019BD8ff;
+        font-size:1.5rem;
+    }
+
+    .Weather--Button--Container {
+        width: 300px;
+        height: 65px;
+        margin-right: auto;
+        margin-left: auto;
+        margin-bottom: 40px;
+    }
+
+    .Weather--Button--1 {
+        font-size: 1.2rem;
+    
+    }
+    
+    .Weather--Button--1:hover {
+        font-size: 1.4rem;
+        cursor: pointer;
+    }
+    
+    .Weather--Button {
+        font-size: 1.2rem;
+    }
+
+    
+    
+  }
 
 
 

@@ -162,6 +162,51 @@
 }
 
 
+
+
+@media (max-width: 767px) {
+    .Home--Hero {
+        width: 100vw;
+    }
+
+    .Home--Hero > h1 {
+        font-size: 3rem;
+    }
+    
+    .Home--Hero > button {
+        font-size: 1.5rem;
+    }
+
+    .Home--Body {
+        display: grid;
+        grid-template-columns: repeat(3, 30vw);
+        grid-template-rows: repeat(3, 125px); 
+        grid-row-gap: 30px;
+        
+    }
+
+    .Home--Body--2 {
+        font-size: 1rem;
+        padding: 10px;
+    }
+
+    .Home--Body--3 {
+        font-size: 1rem;
+        padding: 10px;
+    }
+
+    .Home--Body--6 {
+        font-size: 1rem;
+        padding: 10px;
+    }
+
+
+
+}
+    
+
+
+
 /*            ABOUT            */
 
 .About {
@@ -260,6 +305,29 @@
     text-decoration: none;
     margin-top: 40px;
     margin-bottom: 40px;
+
+
+}
+
+@media (max-width: 767px) {
+    .About--Question {
+        width: 90vw;
+    }
+
+    .About--Api {
+        width: 90vw;
+    }
+
+    .About--Contact {
+        width: 90vw;
+        padding-right: 20px;
+    }
+
+    .About--Contact--Twitter {
+        height: 80px;
+        width: 80px;
+        margin-left: 20px;
+    }
 
 
 }
