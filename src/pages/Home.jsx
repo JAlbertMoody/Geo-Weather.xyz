@@ -17,6 +17,7 @@ export default function Home() {
             <div className='Home--Hero'>
                 <h1>Explore the World's Weather<br /> in Real Time</h1>
                 <button onClick={handleClick}>ENTER APP</button>
+                <h2>Now supporting metric units!</h2>
             </div>
             <div className="Home--Main">
                 <div className="Home--Body">
@@ -24,12 +25,15 @@ export default function Home() {
                         <img className="Home--Img" src={Img1} alt="Dropped pin on a map"/>
                     </div>
                     <div className="Home--Body--2">
-                        <p>Instant weather reports from every corner of the globe. 
-                                Just one click away in the <Link to="/app">"App"</Link> tab</p>
+                        <p>Get the latest weather information from anywhere in the world with our convenient 
+                            and user-friendly app. With real-time updates and a comprehensive database of weather data, 
+                            you'll always be prepared with the <Link to="/app">App</Link> tab</p>
                     </div>
                     <div className="Home--Body--3">
-                        <p>Save your favorite locations for later and 
-                            access them in the <Link to="/favorites">"Favorites"</Link> tab</p>
+                        <p>Save time and hassle by storing your favorite locations in our intuitive and easy-to-use <Link to="/favorites">Favorites</Link> tab. Whether 
+                            you're planning a trip or just want 
+                             to stay on top of the weather in your favorite cities, our app makes it easy to keep everything 
+                             organized and accessible.</p> 
                     </div>
                     <div className="Home--Body--4">
                         <img className="Home--Img" src={Img2} alt="Desert towers of Utah"/>
@@ -38,9 +42,9 @@ export default function Home() {
                         <img className="Home--Img" src={Img3} alt="Temperature map sample"/>
                     </div>
                     <div className="Home--Body--6">
-                        <p>Explore interactive weather maps displaying
-                            temperature, precipitation and more
-                            in the <Link to="/maps">"Maps"</Link> tab</p>
+                        <p>Take your weather forecasting to the next level with our interactive and dynamic weather <Link to="/maps">Maps</Link>. 
+                            Featuring detailed information on temperature, precipitation, 
+                             and other critical data, our maps let you explore and analyze weather patterns in unprecedented detail.</p>
                     </div>
                 </div>
             </div>

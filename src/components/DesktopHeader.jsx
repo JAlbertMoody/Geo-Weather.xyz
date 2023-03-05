@@ -12,8 +12,12 @@ export default function Header(){
                 <p> / </p>
                 <NavLink to="/maps">Maps</NavLink>
             </div>
-            <div className="Header--About--Container">
-                <NavLink className="Header--About" to="/about">?</NavLink>
+            <div className="Dropdown">
+                <button className="Dropdown--Button">More</button>
+                <div className="Dropdown--Content">
+                    <NavLink to="/about" >About</NavLink>
+                    <NavLink to="/settings">Settings</NavLink>
+                </div>       
             </div>
     
         </header>

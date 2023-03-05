@@ -31,6 +31,10 @@
     font-smooth: auto;
 }
 
+.Home--Hero > h2 {
+    text-align: center;
+}
+
 .Home--Hero > button {
     color: white;
     background: linear-gradient(45deg, #019BD8ff, rgb(26, 112, 224));;
@@ -43,9 +47,7 @@
 }
 
 .Home--Hero > button:hover {
-    padding: 21px 39px;
-    margin-top: 0;
-    border-radius: 35px;
+    color: #1E202B;
     cursor: pointer;
 }
 
@@ -180,7 +182,7 @@
     .Home--Body {
         display: grid;
         grid-template-columns: repeat(3, 30vw);
-        grid-template-rows: repeat(3, 125px); 
+        grid-template-rows: repeat(3, 225px); 
         grid-row-gap: 30px;
         
     }

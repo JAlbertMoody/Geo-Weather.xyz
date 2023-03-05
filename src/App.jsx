@@ -6,7 +6,7 @@ import AppPage from './pages/AppPage';
 import Favorites from './pages/Favorites';
 import Maps from './pages/Maps'
 import About from './pages/About'
-import Redirect from './pages/Redirect.Jsx'
+import Settings from './pages/Settings'
 
 export default function App(){
 
@@ -19,7 +19,7 @@ export default function App(){
           <Route path="favorites" element={<Favorites />}/>
           <Route path="maps" element={<Maps />}/>
           <Route path="about" element={<About />}/>
-          <Route path="redirect" element={<Redirect />}/>
+          <Route path="settings" element={<Settings />}/>
         </Route>
       </Routes>
     </BrowserRouter>

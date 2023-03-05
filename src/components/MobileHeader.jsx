@@ -15,6 +15,7 @@ export default function MobileHeader(){
                     <NavLink to="/favorites" >Favorites</NavLink>
                     <NavLink to="/maps" >Maps</NavLink>
                     <NavLink to="/about" >About</NavLink>
+                    <NavLink to="/settings">Settings</NavLink>
                 </div>       
             </div>
     

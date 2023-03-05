@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 const apikey = process.env.REACT_APP_API_KEY; 
 
 
 function CurrentWeather({ coordinates }) {
   const [weatherData, setWeatherData] = useState(null);
   const [city, setCity] = useState(null);
+  const units = useState(JSON.parse(localStorage.getItem("units")) || false);
 
   useEffect(() => {
     async function fetchWeatherData() {
@@ -65,6 +67,13 @@ function CurrentWeather({ coordinates }) {
       }
     }
 
+    let navigate = useNavigate();
+
+    function handleClick() {
+        navigate("/settings")
+    }
+
+
 
     if (weatherData) {
       const temperature = ((weatherData.main.temp - 273.15) * 1.8 + 32).toFixed(1);
@@ -72,17 +81,24 @@ function CurrentWeather({ coordinates }) {
       const description = (weatherData.weather[0].description).toUpperCase();
       const cloudCover = weatherData.clouds.all;
       const humidity = weatherData.main.humidity;
-      const pressure = (weatherData.main.pressure * 0.0295299830714).toFixed(2);
-      const windSpeed = (weatherData.wind.speed * 2.23694).toFixed(0);
+      const pressure = (weatherData.main.pressure * 0.0295299830714).toFixed(2) + " inHg";
+      const windSpeed = (weatherData.wind.speed * 2.23694).toFixed(0) + " mph";
       const windD = weatherData.wind.deg;
       const windGust = weatherData.wind.gust;
-      const windGustConverted = (weatherData.wind.gust * 2.23694).toFixed(0);
+      const windGustConverted = (weatherData.wind.gust * 2.23694).toFixed(0) + " mph";
       
-      const windGustRender = (windGust ? windGustConverted : "0")
+      const windGustRender = (windGust ? windGustConverted : "0 mph")
       const cityName = (city && city.length ? `in ${city[0].name}` : `at ${coordinates.lat}, ${coordinates.lng}`)
 
       const icon = weatherData.weather[0].icon
       const IconSrc = `https://openweathermap.org/img/wn/${icon}@2x.png` 
+
+      const Mtemperature = (weatherData.main.temp - 273.15).toFixed(1);
+      const MfeelsLike = (weatherData.main.feels_like - 273.15).toFixed(1);
+      const Mpressure = weatherData.main.pressure.toFixed(0) + " hPa";
+      const MwindSpeed = (weatherData.wind.speed).toFixed(0) + " m/s";
+      const MwindGusts = (windGust ? windGust.toFixed(0) + " m/s" : "0 m/s");
+  
 
 
       let windDir = ""
@@ -109,6 +125,8 @@ function CurrentWeather({ coordinates }) {
       const isFavorite = favorites.includes(`${coordinates.lat},${coordinates.lng}`);
       const buttonText = isFavorite ? "Saved" : "Add to Favorites";
 
+      const metric = units[0]
+
 
       return (
         <div>
@@ -118,8 +136,8 @@ function CurrentWeather({ coordinates }) {
                 <h1>Current Weather {cityName}</h1>
               </div>
               <div className="Weather--2">
-                <p className='Weather--2--Header'>{temperature}&deg;</p>
-                <p className='Weather--2--Body'>Feels Like: {feelsLike}&deg;</p>
+                <p className='Weather--2--Header'>{(metric ? Mtemperature : temperature)}&deg;</p>
+                <p className='Weather--2--Body'>Feels Like: {(metric ? MfeelsLike : feelsLike)}&deg;</p>
               </div>
               <div className="Weather--3">
                 <div className='Weather--3--Icon--Container'>
@@ -130,15 +148,15 @@ function CurrentWeather({ coordinates }) {
               <div className="Weather--4">
                 <div className='Weather--4--Container'>
                   <p>Humidity: {humidity}%</p>
-                  <p>Pressure: {pressure} inHg</p>
+                  <p>Pressure: {(metric ? Mpressure : pressure)}</p>
                   <p>Cloud Cover: {cloudCover}%</p>
                 </div>
               </div>
               <div className="Weather--5">
                 <div className='Weather--5--Container'>
                   <p>Wind</p>
-                  <h3>{windDir} {windSpeed} mph</h3>
-                  <p>Gusts: {windGustRender} mph</p>
+                  <h3>{windDir} {(metric ? MwindSpeed : windSpeed)}</h3>
+                  <p>Gusts: {(metric ? MwindGusts : windGustRender)}</p>
                 </div>
               </div>
             </div>
@@ -146,6 +164,8 @@ function CurrentWeather({ coordinates }) {
           <div className='Weather--Button--Container'>
               <button className={isFavorite ? "Weather--Button" : "Weather--Button--1"} 
               onClick={addToFavorites}>{buttonText}</button>
+              <button className='Weather--Unit--Button'
+              onClick={handleClick}>Change Units</button>
           </div>
         </div>
       );

@@ -6,6 +6,7 @@ function Favorites() {
     
     const [weatherData, setWeatherData] = useState([]);
     const [favorites, setFavorites] = useState(JSON.parse(localStorage.getItem("favorites")) || []);
+    const units = useState(JSON.parse(localStorage.getItem("units")) || false);
 
     useEffect(() => {
         async function fetchData() {
@@ -45,7 +46,7 @@ function Favorites() {
             )
     }
 
-
+    const metric = units[0]
 
   return (
     <div>
@@ -58,8 +59,8 @@ function Favorites() {
                         <button onClick={() => removeFavorite(index)}>Remove</button>
                     </div>
                     <div className="Favorite--2">
-                        <p className="Favorite--2--Header">{((data.main.temp - 273.15) * 1.8 + 32).toFixed(1)}&deg;</p>
-                        <p className="Favorite--2--Body">Feels Like: {((data.main.feels_like - 273.15) * 1.8 + 32).toFixed(1)}&deg;</p>
+                        <p className="Favorite--2--Header">{(metric ? (data.main.temp - 273.15).toFixed(1) : ((data.main.temp - 273.15) * 1.8 + 32).toFixed(1))}&deg;</p>
+                        <p className="Favorite--2--Body">Feels Like: {(metric ? (data.main.feels_like - 273.15).toFixed(1) : ((data.main.feels_like - 273.15) * 1.8 + 32).toFixed(1))}&deg;</p>
                     </div>
                     <div className="Favorite--3">
                         <div className="Favorite--3--Icon--Container">
@@ -71,7 +72,7 @@ function Favorites() {
                     </div>
                     <div className="Favorite--4">
                         <p>Humidity: {data.main.humidity}%</p>
-                        <p>Pressure: {(data.main.pressure * 0.0295299830714).toFixed(2)} inHg</p>
+                        <p>Pressure: {(metric ? data.main.pressure.toFixed(0) + " hPa" : (data.main.pressure * 0.0295299830714).toFixed(2) + " inHg")}</p>
                         <p>Cloud Cover: {data.clouds.all}%</p>
                     </div>
                     <div className="Favorite--5">
@@ -85,8 +86,10 @@ function Favorites() {
                                 (202 < data.wind.deg && data.wind.deg < 248 ? "SW " :
                                 (248 < data.wind.deg && data.wind.deg < 292 ? "W " :
                                 (292 < data.wind.deg && data.wind.deg < 338 ? "NW " : "N")))))))} 
-                                {(data.wind.speed * 2.23694).toFixed(0)} mph</h3>
-                            <p>Gusts: {(data.wind.gust ? data.wind.gust : "0")} mph</p>
+                                {(metric ? data.wind.speed.toFixed(0) + " m/s" : (data.wind.speed * 2.23694).toFixed(0) + " mph")}</h3>
+                            <p>Gusts: {(metric ? (data.wind.gust ? data.wind.gust.toFixed(0) + " m/s" : "0 m/s") :
+                                                (data.wind.gust ? (data.wind.gust * 2.23694).toFixed(0) + " mph" : "0 mph"))}
+                            </p>
                         </div>
                     </div>
                 </div>
