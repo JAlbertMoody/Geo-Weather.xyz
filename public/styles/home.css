@@ -182,7 +182,7 @@
     .Home--Body {
         display: grid;
         grid-template-columns: repeat(3, 30vw);
-        grid-template-rows: repeat(3, 225px); 
+        grid-template-rows: repeat(3, 125px); 
         grid-row-gap: 30px;
         
     }

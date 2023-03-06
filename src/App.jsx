@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from './components/Layout';
-import Home from './pages/Home';
-import AppPage from './pages/AppPage';
+import Home from './pages/HomePageComponents/Home';
+import AppPage from './pages/AppPageComponents/AppPage';
 import Favorites from './pages/Favorites';
 import Maps from './pages/Maps'
 import About from './pages/About'

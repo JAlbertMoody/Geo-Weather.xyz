@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import Map from "./AppPageComponents/Map"
-import CurrentWeather from "./AppPageComponents/CurrentWeather";
+import Map from "./Map"
+import CurrentWeather from "./CurrentWeather";
+import TimeInfo from "./TimeInfo"
 
 
 function AppPage() {
@@ -14,8 +15,9 @@ function AppPage() {
     <div className="App">
       <Map setCoordinates={setCoordinates} />
       <>
-          <CurrentWeather coordinates={coordinates}/>
+          <CurrentWeather coordinates={coordinates} />
       </>
+      <TimeInfo coordinates={coordinates} />
     </div>
   );
 }

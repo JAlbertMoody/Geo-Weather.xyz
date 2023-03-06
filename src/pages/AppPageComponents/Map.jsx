@@ -23,6 +23,7 @@ function Map({setCoordinates}) {
         setCoordinates(newCoordinates);
       }
 
+
   return (
     <div className="Map">
       <MapContainer

@@ -32,7 +32,7 @@
     background: linear-gradient(340deg, #2D303Dff, #1E202Bff);
     box-shadow: 0px 0px 15px black;
     margin-top: 0px;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 }
 
 
@@ -168,47 +168,49 @@
     height: 75px;
     margin-right: auto;
     margin-left: auto;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .Weather--Unit--Button {
-    width: 275px;
-    height: 100%;
-    border-radius: 16px;
-    font-size: 32px;
+    width: 200px;
+    height: 80%;
+    border-radius: 12px;
+    font-size: 24px;
     font-weight: bold;
     border: none;
     outline: none;
     box-shadow: 0px 0px 15px black;
-    background: linear-gradient(210deg, #019BD8ff, rgb(26, 112, 224));
-    color: whitesmoke;
+    color: #2D303D;
+    background: #1E202B;
     margin-left: 20px;
 }
 
 .Weather--Unit--Button:hover {
-    font-size: 34px;
     cursor: pointer;
+    color: #019BD8;
+    background: #2D303D;
 }
 
 .Weather--Button--1 {
-    width: 350px;
-    height: 100%;
-    border-radius: 16px;
-    font-size: 32px;
+    width: 275px;
+    height: 80%;
+    border-radius: 12px;
+    font-size: 24px;
     font-weight: bold;
     border: none;
     outline: none;
     box-shadow: 0px 0px 15px black;
-    background: linear-gradient(45deg, #019BD8ff, rgb(26, 112, 224));
-    color: whitesmoke;
+    background: #1E202B;
+    color: #2D303D;
 
 }
 
 .Weather--Button--1:hover {
-    font-size: 34px;
+    color: #019BD8;
+    background: #2D303D;
     cursor: pointer;
 }
 
@@ -298,17 +300,12 @@
         height: 65px;
         margin-right: auto;
         margin-left: auto;
-        margin-bottom: 40px;
+        margin-bottom: 20px;
     }
 
     .Weather--Button--1 {
         font-size: 1.2rem;
     
-    }
-    
-    .Weather--Button--1:hover {
-        font-size: 1.4rem;
-        cursor: pointer;
     }
     
     .Weather--Button {
@@ -325,6 +322,151 @@
     }
     
   }
+
+.Time--Info {
+    width: 750px;
+    height: 162px;
+    margin-right: auto;
+    margin-left: auto;
+    background: linear-gradient(340deg, #2D303Dff, #1E202Bff);
+    box-shadow: 0px 0px 15px black;
+    margin-top: 0px;
+    margin-bottom: 20px;
+    display: flex;
+}
+
+.Time--Local {
+    height: 162px;
+    width: 250px;
+    padding: 10px;
+    border: 1px solid black;
+    border: 5px solid #1E202Bff;
+    
+}
+
+.Time--Local--Header {
+    font-size: 1.5rem;
+    margin: 5px;
+}
+
+.Time--Local--Time {
+    margin: 0px;
+    margin-top: 12px;
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.Time--SunInfo {
+    height: 162px;
+    width: 500px;
+    border: 5px solid #1E202Bff;
+    border-left: none;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+}
+
+.Sunrise--Sunset {
+    display: flex;
+    margin: 0;
+    margin-bottom: 5px;
+}
+
+.Sunrise--Sunset > p:first-child {
+    margin: 10px 15px 15px 15px;
+    color: #019BD8;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.Sunrise--Sunset > p:nth-child(2) {
+    margin: 10px 10px 15px 10px;
+    color: #1AC5E0;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.Sunrise--Sunset--Extra {
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+
+}
+
+.Sunrise--Sunset--Extra > p {
+    font-size: 1.2rem;
+    margin: 5px;
+    margin-top: 0px;
+}
+
+@media (max-width: 767px) {
+    .Time--Info {
+        width: 90vw;
+        height: 287px;
+        margin-top: 0px;
+        margin-bottom: 20px;
+        display: flex;
+        flex-direction: column;
+    }
+    .Time--Local {
+        height: 125px;
+        width: 100%;
+    }
+    
+    .Time--Local--Header {
+        font-size: 1.2rem;
+        margin: 5px;
+    }
+    
+    .Time--Local--Time {
+        margin: 0px;
+        margin-top: 10px;
+        font-size: 2.5rem;
+    }
+    .Time--SunInfo {
+        width: 100%;
+        border: 5px solid #1E202Bff;
+        border-top: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: start;
+    }
+    
+    .Sunrise--Sunset {
+        display: flex;
+        margin: 0;
+        margin-bottom: 5px;
+    }
+    
+    .Sunrise--Sunset > p:first-child {
+        margin: 10px 15px 15px 15px;
+        font-size: 1rem;
+    }
+    
+    .Sunrise--Sunset > p:nth-child(2) {
+        margin: 10px 10px 15px 10px;
+        font-size: 1rem;
+    }
+    .Sunrise--Sunset--Extra > p {
+        font-size: 1rem;
+    }
+    .konvajs-content {
+        width: 90%;
+    }
+    .konvajs-content > canvas {
+        width: 90%;
+    }
+}
+
+
+
+
+
+
+
 
 
 
