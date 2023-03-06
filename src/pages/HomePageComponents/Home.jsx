@@ -4,6 +4,7 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import HomeMobile from './HomeMobile';
 import HomeDesktop from './HomeDesktop';
 
+
 export default function Home() {
 
     let navigate = useNavigate();

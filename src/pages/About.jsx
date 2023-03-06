@@ -2,10 +2,17 @@ import React from 'react';
 import Img1 from "../SrcImages/openweather.png";
 import Img2 from "../SrcImages/openstreetmap.png";
 import Img3 from "../SrcImages/twitter.png";
+import Img4 from "../SrcImages/SunriseAPI.png";
+import { Tweet } from 'react-twitter-widgets'
 
 export default function About() {
     return (
         <div className="About">
+            <div className='Twitter'>
+                <Tweet tweetId="1632699294703812613" 
+                    options={{theme: 'dark'}}
+             />
+            </div>
             <div className="About--Question">
                 <h2>Q&A</h2>
                 <h3>Is the weather data current?</h3>
@@ -29,6 +36,9 @@ export default function About() {
                 <div className='About--Api--Img'>
                     <img src={Img1} alt="Openweathermap logo"/>
                     <img src={Img2} alt="Openstreetmap logo"/>
+                    <a href='https://sunrise-sunset.org/api' target="_blank" rel="noreferrer">
+                        <img src={Img4} alt="Sunrise-Sunset API logo" />
+                    </a>
                 </div>
 
             </div>

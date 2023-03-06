@@ -14,7 +14,7 @@ export default function HomeMobile() {
                     </div>
                     <div className="Home--Body--2">
                         <p>Get the latest weather information from anywhere in the world with our convenient 
-                            and user-friendly <Link to="/app">app</Link>.</p>
+                            and user-friendly <Link to="/app">App</Link>.</p>
                     </div>
                     <div className="Home--Body--3">
                         <p>Save time and hassle by storing your favorite locations in our intuitive and easy-to-use <Link to="/favorites">Favorites</Link> tab.</p> 
