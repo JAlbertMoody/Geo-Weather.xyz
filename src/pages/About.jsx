@@ -8,11 +8,6 @@ import { Tweet } from 'react-twitter-widgets'
 export default function About() {
     return (
         <div className="About">
-            <div className='Twitter'>
-                <Tweet tweetId="1632699294703812613" 
-                    options={{theme: 'dark'}}
-             />
-            </div>
             <div className="About--Question">
                 <h2>Q&A</h2>
                 <h3>Is the weather data current?</h3>
@@ -56,7 +51,11 @@ export default function About() {
                         </a>
                     </div>
                 </div>
-
+            </div>
+            <div className='Twitter'>
+                <Tweet tweetId="1632699294703812613" 
+                    options={{theme: 'dark'}}
+             />
             </div>
             <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" 
             target="_blank" rel="noreferrer" className="DONTCLICK">
