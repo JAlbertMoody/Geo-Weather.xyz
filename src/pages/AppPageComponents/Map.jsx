@@ -16,14 +16,23 @@ function Map({setCoordinates}) {
 
       function handleClick(event) {
         setPosition([event.latlng.lat, event.latlng.lng]);
-        const newCoordinates = {
+        if (event.latlng.lng <= (-180)) {
+          const diff = event.latlng.lng - (-180);
+          let newLng = (180 + diff);
+          const newCoordinates = {
+            lat: (event.latlng.lat).toFixed(2),
+            lng: newLng.toFixed(2)
+          };
+          setCoordinates(newCoordinates);
+        } else {
+          const newCoordinates = {
             lat: (event.latlng.lat).toFixed(2),
             lng: (event.latlng.lng).toFixed(2)
           };
-        setCoordinates(newCoordinates);
+          setCoordinates(newCoordinates);
+        }
       }
-
-
+  
   return (
     <div className="Map">
       <MapContainer

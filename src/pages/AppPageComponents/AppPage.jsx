@@ -24,3 +24,5 @@ function AppPage() {
 
 
 export default AppPage;
+
+// <TimeInfo coordinates={coordinates} />
