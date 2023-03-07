@@ -85,7 +85,7 @@ function Favorites() {
                                 (158 < data.wind.deg && data.wind.deg < 202 ? "S " :
                                 (202 < data.wind.deg && data.wind.deg < 248 ? "SW " :
                                 (248 < data.wind.deg && data.wind.deg < 292 ? "W " :
-                                (292 < data.wind.deg && data.wind.deg < 338 ? "NW " : "N")))))))} 
+                                (292 < data.wind.deg && data.wind.deg < 338 ? "NW " : "N ")))))))} 
                                 {(metric ? data.wind.speed.toFixed(0) + " m/s" : (data.wind.speed * 2.23694).toFixed(0) + " mph")}</h3>
                             <p>Gusts: {(metric ? (data.wind.gust ? data.wind.gust.toFixed(0) + " m/s" : "0 m/s") :
                                                 (data.wind.gust ? (data.wind.gust * 2.23694).toFixed(0) + " mph" : "0 mph"))}

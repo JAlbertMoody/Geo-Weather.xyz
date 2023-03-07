@@ -185,7 +185,7 @@ a.Header--Title.active {
 
 .Maps {
     width: 100%;
-    height: calc(100vh - 132px);
+    height: calc(100vh - 72px);
     outline: 1px solid black;
     padding: 0;
     box-shadow: 0px 0px 15px 0px black;
@@ -230,6 +230,26 @@ a.Header--Title.active {
     outline: none;
     border: 2px solid rgb(165, 163, 163);
 
+}
+
+.Maps--HowTo {
+    width: 750px;
+    min-height: 100px;
+    border-radius: 12px;
+    box-shadow: 0px 0px 15px black;
+    background: linear-gradient(120deg, #2D303Dff, #1E202Bff);
+    margin-top: 20px;
+    padding: 10px;
+    margin: 40px auto 40px auto;
+}
+
+.Maps--HowTo > h1 {
+    margin: 5px;
+}
+
+.Maps--HowTo > p {
+    margin-left: 5px;
+    font-size: 1.2rem;
 }
 
 @media (max-width: 767px) {
@@ -323,6 +343,14 @@ a.Header--Title.active {
     .Dropdown--Content a:active {
         color: #019BD8ff;
         background-color: #1E202B;
+    }
+
+    .Maps--HowTo {
+        width: 90vw;
+    }
+
+    .Maps--HowTo > p {
+        font-size: 1rem;
     }
 }
 
@@ -654,7 +682,7 @@ input:checked + .slider:before {
     padding: 10px;
 }
 
-.About--Question > h2 {
+.About--Question > h1 {
     font-size: 32px;
     margin: 5px;
     color: #019BD8;
@@ -1276,10 +1304,10 @@ input:checked + .slider:before {
 }
 
 .Weather--Button {
-    width: 350px;
-    height: 100%;
-    border-radius: 16px;
-    font-size: 32px;
+    width: 275px;
+    height: 80%;
+    border-radius: 12px;
+    font-size: 24px;
     font-weight: bold;
     border: none;
     outline: none;
