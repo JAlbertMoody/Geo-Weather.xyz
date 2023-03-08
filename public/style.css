@@ -496,7 +496,6 @@ input:checked + .slider:before {
     color: white;
     background: linear-gradient(45deg, #019BD8ff, rgb(26, 112, 224));;
     font-size: 38px;
-    font-weight: bold;
     padding: 18px 36px;
     border-radius: 30px;
     border: none;
@@ -504,8 +503,9 @@ input:checked + .slider:before {
 }
 
 .Home--Hero > button:hover {
-    color: #1E202B;
+    /* color: #019BD8ff; */
     cursor: pointer;
+    font-weight: bold;
 }
 
 
@@ -514,9 +514,11 @@ input:checked + .slider:before {
 
 .Home--Main {
     display: flex;
-    justify-content: center;
+    justify-content: start;
+    align-items: center;
     margin-top: 40px;
     margin-bottom: 40px;
+    flex-direction: column;
 }
 
 .Home--Body {
@@ -620,6 +622,10 @@ input:checked + .slider:before {
     margin-bottom: 20px;
     margin-left: auto;
     margin-right: auto;
+}
+
+.Home--Twitter--Container {
+    margin-top: 40px;
 }
 
 @media (max-width: 767px) {

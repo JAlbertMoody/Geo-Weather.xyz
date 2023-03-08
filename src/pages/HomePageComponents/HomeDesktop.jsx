@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Follow } from 'react-twitter-widgets'
 import Img1 from "../../SrcImages/DroppedPin.png";
 import Img2 from "../../SrcImages/Utah.jpg";
 import Img3 from "../../SrcImages/MapSample.png";
@@ -34,6 +35,9 @@ export default function HomeDesktop() {
                         Featuring detailed information on temperature, precipitation, 
                             and other critical data, our maps let you explore and analyze weather patterns in unprecedented detail.</p>
                 </div>
+            </div>
+            <div className='Home--Twitter--Container'>
+                <Follow className="Home--Twitter--Follow" username='GeoWeatherxyz' />
             </div>
         </div>
     )}
