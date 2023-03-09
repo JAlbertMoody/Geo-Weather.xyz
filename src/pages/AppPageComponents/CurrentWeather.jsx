@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
 const apikey = process.env.REACT_APP_API_KEY; 
 
 
@@ -51,29 +50,6 @@ function CurrentWeather({ coordinates }) {
   }, [coordinates])
 
   function DisplayWeatherData() {
-    const [favorites, setFavorites] = useState([]);
-
-    useEffect(() => {
-      const savedFavorites = JSON.parse(localStorage.getItem("favorites")) || [];
-      setFavorites(savedFavorites);
-    }, []);
-
-    function addToFavorites() {
-      const newFavorite = `${coordinates.lat},${coordinates.lng}`;
-      if (!favorites.includes(newFavorite) && favorites.length < 11) {
-        const updatedFavorites = [...favorites, newFavorite];
-        setFavorites(updatedFavorites);
-        localStorage.setItem("favorites", JSON.stringify(updatedFavorites));
-      }
-    }
-
-    let navigate = useNavigate();
-
-    function handleClick() {
-        navigate("/settings")
-    }
-
-
 
     if (weatherData) {
       const temperature = ((weatherData.main.temp - 273.15) * 1.8 + 32).toFixed(1);
@@ -132,9 +108,6 @@ function CurrentWeather({ coordinates }) {
         windDir = "N"
       }
 
-      const isFavorite = favorites.includes(`${coordinates.lat},${coordinates.lng}`);
-      const buttonText = isFavorite ? "Saved" : "Add to Favorites";
-
       const metric = units[0]
 
 
@@ -171,16 +144,10 @@ function CurrentWeather({ coordinates }) {
               </div>
             </div>
           </div>
-          <div className='Weather--Button--Container'>
-              <button className={isFavorite ? "Weather--Button" : "Weather--Button--1"} 
-              onClick={addToFavorites}>{buttonText}</button>
-              <button className='Weather--Unit--Button'
-              onClick={handleClick}>Change Units</button>
-          </div>
         </div>
       );
     } else {
-      return <h1 className='Current--Leftover'>Click Map To Get Weather Data</h1>;
+      return 
       
     }
   }

@@ -53,7 +53,7 @@ export default function About() {
                 </div>
             </div>
             <div className='Twitter'>
-                <Tweet tweetId="1632699294703812613" 
+                <Tweet tweetId="1633661914638319616" 
                     options={{theme: 'dark'}}
              />
             </div>

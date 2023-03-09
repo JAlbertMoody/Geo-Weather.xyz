@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Follow } from 'react-twitter-widgets'
+import { Tweet } from 'react-twitter-widgets'
 import Img1 from "../../SrcImages/DroppedPin.png";
 import Img2 from "../../SrcImages/Utah.jpg";
 import Img3 from "../../SrcImages/MapSample.png";
@@ -30,8 +30,10 @@ export default function HomeMobile() {
                         <p>Take your weather forecasting to the next level with our interactive and dynamic weather <Link to="/maps">Maps</Link>.</p>
                     </div>
                 </div>
-                <div className='Home--Twitter--Container'>
-                    <Follow className="Home--Twitter--Follow" username='GeoWeatherxyz' />
+                <div className='Twitter'>
+                    <Tweet tweetId="1633661914638319616" 
+                        options={{theme: 'dark'}}
+                    />
                 </div>
             </div>
     )}

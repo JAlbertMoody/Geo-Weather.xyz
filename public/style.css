@@ -649,13 +649,9 @@ input:checked + .slider:before {
 .Twitter {
     width: 550px;
     margin-top: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 0px;
     margin-left: auto;
     margin-right: auto;
-}
-
-.Home--Twitter--Container {
-    margin-top: 40px;
 }
 
 @media (max-width: 767px) {
@@ -1159,7 +1155,7 @@ input:checked + .slider:before {
     background: linear-gradient(340deg, #2D303Dff, #1E202Bff);
     box-shadow: 0px 0px 15px black;
     margin-top: 0px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .Weather--Container {
@@ -1294,29 +1290,10 @@ input:checked + .slider:before {
     margin-right: auto;
     margin-left: auto;
     margin-bottom: 20px;
+    margin-top: 10px;
     display: flex;
     align-items: center;
-    justify-content: center;
-}
-
-.Weather--Unit--Button {
-    width: 200px;
-    height: 80%;
-    border-radius: 12px;
-    font-size: 24px;
-    font-weight: bold;
-    border: none;
-    outline: none;
-    box-shadow: 0px 0px 15px black;
-    color: #2D303D;
-    background: #1E202B;
-    margin-left: 20px;
-}
-
-.Weather--Unit--Button:hover {
-    cursor: pointer;
-    color: #019BD8;
-    background: #2D303D;
+    justify-content: start;
 }
 
 .Weather--Button--1 {
@@ -1426,6 +1403,7 @@ input:checked + .slider:before {
         margin-right: auto;
         margin-left: auto;
         margin-bottom: 20px;
+        justify-content: center;
     }
 
     .Weather--Button--1 {
@@ -1435,15 +1413,6 @@ input:checked + .slider:before {
     
     .Weather--Button {
         font-size: 1.2rem;
-    }
-
-    .Weather--Unit--Button {
-        font-size: 1.2rem;
-    }
-    
-    .Weather--Unit--Button:hover {
-        font-size: 1.2rem;
-        cursor: pointer;
     }
     
   }
@@ -1456,7 +1425,7 @@ input:checked + .slider:before {
     background: linear-gradient(340deg, #2D303Dff, #1E202Bff);
     box-shadow: 0px 0px 15px black;
     margin-top: 0px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     display: flex;
 }
 
