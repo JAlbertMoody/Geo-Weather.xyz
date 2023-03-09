@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { MapContainer, TileLayer, Marker, Popup, useMapEvents } from 'react-leaflet'
 
 function Map({setCoordinates}) {
-    const [position, setPosition] = useState([41.26, -95.93])
+    const [position, setPosition] = useState(JSON.parse(localStorage.getItem("coords")) || [41.26, -95.93])
+
 
     function AddMarkerToClick({ onClick }) {
         useMapEvents({
@@ -29,6 +30,7 @@ function Map({setCoordinates}) {
             lat: (event.latlng.lat).toFixed(2),
             lng: (event.latlng.lng).toFixed(2)
           };
+          localStorage.setItem("coords", JSON.stringify(newCoordinates));
           setCoordinates(newCoordinates);
         }
       }

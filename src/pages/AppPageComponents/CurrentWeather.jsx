@@ -88,7 +88,17 @@ function CurrentWeather({ coordinates }) {
       const windGustConverted = (weatherData.wind.gust * 2.23694).toFixed(0) + " mph";
       
       const windGustRender = (windGust ? windGustConverted : "0 mph")
-      const cityName = (city && city.length ? `in ${city[0].name}` : `at ${coordinates.lat}, ${coordinates.lng}`)
+      // const cityName = (city && city.length ? `in ${city[0].name}` : `at ${coordinates.lat}, ${coordinates.lng}`)
+
+      const maxLength = 21; 
+      let cityName;
+
+      if (city && city.length) {
+        cityName = city[0].name.length > maxLength ? city[0].name.substring(0, maxLength) + "..." : city[0].name;
+        cityName = `in ${cityName}`;
+      } else {
+        cityName = `at ${coordinates.lat}, ${coordinates.lng}`;
+      }
 
       const icon = weatherData.weather[0].icon
       const IconSrc = `https://openweathermap.org/img/wn/${icon}@2x.png` 

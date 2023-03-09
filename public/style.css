@@ -291,7 +291,7 @@ a.Header--Title.active {
     }
 
     .Header--Title {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
     }
 
     .Dropdown {
@@ -327,7 +327,7 @@ a.Header--Title.active {
         border-radius: 1px;
     }
 
-    .Dropdown--Container .Dropdown--Content {
+    .Dropdown--Button .Dropdown--Content {
         display: flex;
         flex-direction: column;
         color: #019BD8ff;
@@ -336,7 +336,7 @@ a.Header--Title.active {
         border-radius: 1px;
     }
 
-    .Dropdown--Container:active .Dropdown--Content {
+    .Dropdown--Button:active .Dropdown--Content {
         display: flex;
         flex-direction: column;
         color: #019BD8ff;
@@ -345,7 +345,7 @@ a.Header--Title.active {
         border-radius: 1px;
     }
 
-    .Dropdown--Container:disabled .Dropdown--Content {
+    .Dropdown--Button:disabled .Dropdown--Content {
         display: none;
     }
 
@@ -1377,7 +1377,7 @@ input:checked + .slider:before {
 
     .Weather--1 > h1 {
         margin: 5px;
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
 
     .Weather--2--Header {

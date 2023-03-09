@@ -8,6 +8,7 @@ export default function Settings() {
   const toggleSwitch = () => {
     localStorage.setItem("units", JSON.stringify(!isMetric));
     setIsMetric(!isMetric);
+    window.location.reload();
   };
   
 
