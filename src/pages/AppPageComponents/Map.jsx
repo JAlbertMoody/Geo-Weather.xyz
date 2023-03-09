@@ -38,7 +38,7 @@ function Map({setCoordinates}) {
   return (
     <div className="Map">
       <MapContainer
-        center={[40, -96]}
+        center={position}
         zoom={4}
         scrollWheelZoom={true}
         className="Map--container"
