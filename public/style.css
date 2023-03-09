@@ -80,8 +80,32 @@ a.Header--Title.active {
 }
 
 .Dropdown {
-    margin-left: 124px;
+    margin-left: 0px;
+    width: 200px;
+    display: flex;
+    justify-content: end;
+    align-items: center;
 }
+
+.Header--Units {
+    margin-right: 10px;
+}
+
+.Header--Units > * {
+    font-size: 1.25rem;
+    padding: 8px 0px;
+    border-radius: 8px;
+    border: none;
+    background-color: rgb(17, 18, 24);
+    color: whitesmoke;
+}
+
+.Header--Units > *:hover {
+    background-color: #2D303D;
+    color: #019BD8ff;
+    cursor: pointer;
+}
+
 
 .Dropdown--Button {
     padding: 8px 14px;
@@ -100,6 +124,7 @@ a.Header--Title.active {
 
 .Dropdown--Button:hover {
     color: #019BD8ff;
+    cursor: pointer;
 }
 
 .Dropdown--Content {
@@ -112,7 +137,7 @@ a.Header--Title.active {
     border-radius: 5px;
 }
 
-.Dropdown:hover .Dropdown--Content {
+.Dropdown--Container:hover .Dropdown--Content {
     display: flex;
     flex-direction: column;
     color: #019BD8ff;
@@ -121,7 +146,7 @@ a.Header--Title.active {
     border-radius: 5px;
 }
 
-.Dropdown:active .Dropdown--Content {
+.Dropdown--Container:active .Dropdown--Content {
     display: flex;
     flex-direction: column;
     color: #019BD8ff;
@@ -130,7 +155,7 @@ a.Header--Title.active {
     border-radius: 5px;
 }
 
-.Dropdown:disabled .Dropdown--Content {
+.Dropdown--Container:disabled .Dropdown--Content {
     display: none;
 }
 
@@ -265,8 +290,13 @@ a.Header--Title.active {
         height: 144px;
     }
 
+    .Header--Title {
+        font-size: 1.8rem;
+    }
+
     .Dropdown {
         margin-left: 0;
+        width: 140px;
     }
    
     .Dropdown--Button {
@@ -297,7 +327,7 @@ a.Header--Title.active {
         border-radius: 1px;
     }
 
-    .Dropdown:hover .Dropdown--Content {
+    .Dropdown--Container .Dropdown--Content {
         display: flex;
         flex-direction: column;
         color: #019BD8ff;
@@ -306,7 +336,7 @@ a.Header--Title.active {
         border-radius: 1px;
     }
 
-    .Dropdown:active .Dropdown--Content {
+    .Dropdown--Container:active .Dropdown--Content {
         display: flex;
         flex-direction: column;
         color: #019BD8ff;
@@ -315,7 +345,7 @@ a.Header--Title.active {
         border-radius: 1px;
     }
 
-    .Dropdown:disabled .Dropdown--Content {
+    .Dropdown--Container:disabled .Dropdown--Content {
         display: none;
     }
 

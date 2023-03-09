@@ -9,6 +9,7 @@ export default function Settings() {
     localStorage.setItem("units", JSON.stringify(!isMetric));
     setIsMetric(!isMetric);
   };
+  
 
 
   return (
