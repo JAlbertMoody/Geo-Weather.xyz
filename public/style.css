@@ -1747,8 +1747,6 @@ input:checked + .slider:before {
     text-align: center;
 }
 
-
-
 @media (min-width: 929px) and (max-width: 950px){
     .Home--Hero--Weather {
         width: 90vw;
@@ -1952,6 +1950,134 @@ input:checked + .slider:before {
     }
 }
 
+.SearchBar {
+    background-color: white;
+    backdrop-filter: blur(10px);
+    opacity: 0.6;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px white;
+    width: 928px;
+    min-height: 50px;
+    max-width: 928px;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+.SearchBar > h2 {
+    color:black;
+    margin: 5px;
+    margin-bottom: 0px;
+}
+
+.SearchBar--Inputs {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.SearchBar--Input {
+    margin: 5px 5px;
+    height: 37px;
+    padding: 5px;
+    font-size: 1.2rem;
+    border-radius: 8px;
+}
+
+.SearchBar--Inputs > button {
+    margin: 5px 5px;
+    font-size: 1.2rem;
+    padding: 5px 15px;
+    border-radius: 8px;
+    border: 2px solid #323544;
+    color: #323544;
+}
+
+.SearchBar--Inputs > button:hover {
+    cursor: pointer;
+    background-color: #c2c2c2;
+}
+
+@media (min-width: 929px) and (max-width: 950px){
+    .SearchBar {
+        width: 90vw;
+    }
+}
+
+@media (min-width: 767px) and (max-width: 928px) {
+    .SearchBar {
+        width: 90vw;
+    }
+    .SearchBar--Input {
+        width: 210px;
+    }
+}
+
+@media (max-width: 767px) {
+    .SearchBar {
+        width: 100vw;
+    }
+    .SearchBar--Inputs {
+        flex-direction: column;
+        align-items: start;
+    }
+}
+
+.Home--Favorite--Container {
+    width: 928px;
+    height: 60px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.Home--Favorite--Button {
+    width: 275px;
+    height: 60px;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 24px;
+    border: none;
+    color: #323544;
+    background-color: #c2c2c2;
+    backdrop-filter: blur(10px);
+    opacity: 0.6;
+    box-shadow: 0px 0px 15px white;
+}
+
+.Home--Favorite--Button--1 {
+    width: 275px;
+    height: 60px;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 24px;
+    border: none;
+    color: #323544;
+    background-color: white;
+    backdrop-filter: blur(10px);
+    opacity: 0.6;
+    box-shadow: 0px 0px 15px white;
+}
+
+.Home--Favorite--Button--1:hover {
+    cursor: pointer;
+    background-color: #c2c2c2;
+
+}
+
+@media (min-width: 767px) and (max-width: 950px) {
+    .Home--Favorite--Container {
+        width: 90vw;
+    }
+}
+
+@media (max-width: 767px) {
+    .Home--Favorite--Container {
+        width: 100vw;
+        justify-content: center;
+    }
+}
 
 
 

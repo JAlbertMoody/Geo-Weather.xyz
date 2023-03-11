@@ -21,14 +21,14 @@ function Map({setCoordinates}) {
           const diff = event.latlng.lng - (-180);
           let newLng = (180 + diff);
           const newCoordinates = {
-            lat: (event.latlng.lat).toFixed(2),
-            lng: newLng.toFixed(2)
+            lat: (event.latlng.lat).toFixed(4),
+            lng: newLng.toFixed(4)
           };
           setCoordinates(newCoordinates);
         } else {
           const newCoordinates = {
-            lat: (event.latlng.lat).toFixed(2),
-            lng: (event.latlng.lng).toFixed(2)
+            lat: (event.latlng.lat).toFixed(4),
+            lng: (event.latlng.lng).toFixed(4)
           };
           localStorage.setItem("coords", JSON.stringify(newCoordinates));
           setCoordinates(newCoordinates);

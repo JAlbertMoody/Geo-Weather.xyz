@@ -4,6 +4,9 @@ import tzlookup from 'tz-lookup';
 import moment from 'moment-timezone';
 import { Layer, Stage, Line } from "react-konva";
 import useMediaQuery from '@mui/material/useMediaQuery';
+
+import SearchBar from './SearchBar';
+import HomeFavoritesButton from './HomeFavoritesButton';
 const apikey = process.env.REACT_APP_API_KEY; 
 
 export default function HomeHero() {
@@ -16,8 +19,8 @@ export default function HomeHero() {
     if (coords) {
       const { latitude, longitude } = coords;
       setIpCoords({
-        lat: parseFloat(latitude.toFixed(2)),
-        lng: parseFloat(longitude.toFixed(2)),
+        lat: parseFloat(latitude.toFixed(4)),
+        lng: parseFloat(longitude.toFixed(4)),
       });
     }
   }, [coords]);
@@ -158,11 +161,11 @@ export default function HomeHero() {
       return (
         <div>
           <div className="Home--Hero">
+            <SearchBar setIpCoords={setIpCoords}/>
             <div className="Home--Hero--Weather">
-
               <div className="Home--Hero--1">
                 <div className='Home--Hero--1Head'>
-                  <h1 className='Home--Hero--1Head1'>Current Weather At Your Location:</h1>
+                  <h1 className='Home--Hero--1Head1'>Current Weather for:</h1>
                   <h1 className='Home--Hero--1Head2'>{cityName}, {country}</h1>
                 </div>
               </div>
@@ -242,6 +245,7 @@ export default function HomeHero() {
               </div>
 
             </div>
+            <HomeFavoritesButton ipCoords={ipCoords}/>
           </div>
         </div>
       );
@@ -249,11 +253,12 @@ export default function HomeHero() {
       return (
         <div>
           <div className='Home--Hero'>
+          <SearchBar setIpCoords={setIpCoords}/>
             <div className='Home--Hero--Weather'>
               <div className='Home--Hero--Alternate'>
                 <h1>Explore the World's Weather<br /> in Real Time</h1>
                 <p>Allow location to view your local weather here,</p>
-                <p>or explore via the App page</p>
+                <p>or use the search bar above.</p>
               </div>
             </div>
           </div>
