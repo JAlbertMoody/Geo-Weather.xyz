@@ -18,7 +18,7 @@ export default function SearchBar({setIpCoords}){
     function handleClick() {
         async function fetchGeoCoords() {
             if (formData) {
-              const URL = `http://api.openweathermap.org/geo/1.0/direct?q=${formData.city},${formData.state},${formData.country}&limit=1&appid=${apikey}`;
+              const URL = `https://api.openweathermap.org/geo/1.0/direct?q=${formData.city},${formData.state},${formData.country}&limit=1&appid=${apikey}`;
               try {
                 const response = await fetch(URL);
                 if (response.ok) {
