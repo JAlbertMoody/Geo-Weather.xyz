@@ -106,7 +106,6 @@ a.Header--Title.active {
     cursor: pointer;
 }
 
-
 .Dropdown--Button {
     padding: 8px 14px;
     border-radius: 10px;
@@ -497,51 +496,6 @@ input:checked + .slider:before {
 
 /*          HOME         */
 
-.Home--Hero {
-    background-image: url('/images/Hurricane.jpg');
-    background-size: cover;
-    background-position: center;
-    height: calc(100vh - 72px);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 40px;
-    box-shadow: 0px 0px 15px 0px black;
-}
-
-.Home--Hero > h1 {
-    font-size: 4.25rem;
-    text-align: center;
-    text-shadow: 2px 1px 5px rgb(17, 18, 24);
-    margin-bottom: 40px;
-    font-smooth: auto;
-}
-
-.Home--Hero > h2 {
-    text-align: center;
-}
-
-.Home--Hero > button {
-    color: white;
-    background: linear-gradient(45deg, #019BD8ff, rgb(26, 112, 224));;
-    font-size: 38px;
-    padding: 18px 36px;
-    border-radius: 30px;
-    border: none;
-    margin-top: 6px;
-}
-
-.Home--Hero > button:hover {
-    /* color: #019BD8ff; */
-    cursor: pointer;
-    font-weight: bold;
-}
-
-
-/*          BODY               */
-
-
 .Home--Main {
     display: flex;
     justify-content: start;
@@ -655,17 +609,6 @@ input:checked + .slider:before {
 }
 
 @media (max-width: 767px) {
-    .Home--Hero {
-        width: 100vw;
-    }
-
-    .Home--Hero > h1 {
-        font-size: 3rem;
-    }
-    
-    .Home--Hero > button {
-        font-size: 1.5rem;
-    }
 
     .Home--Body {
         display: grid;
@@ -1081,7 +1024,6 @@ input:checked + .slider:before {
 
 }
 
-
 @media (min-width: 768px) and (max-width: 928px) {
     .Favorite {
         width: 100vw;
@@ -1343,6 +1285,7 @@ input:checked + .slider:before {
         margin-left: 0px;
         margin-right: 0px;
         overflow: visible;
+        box-shadow: none;
     }
 
     .Weather--Container {
@@ -1433,7 +1376,6 @@ input:checked + .slider:before {
     height: 162px;
     width: 250px;
     padding: 10px;
-    border: 1px solid black;
     border: 5px solid #1E202Bff;
     
 }
@@ -1497,12 +1439,13 @@ input:checked + .slider:before {
 
 @media (max-width: 767px) {
     .Time--Info {
-        width: 90vw;
+        width: 100vw;
         height: 287px;
-        margin-top: 0px;
+        margin-top: -15px;
         margin-bottom: 20px;
         display: flex;
         flex-direction: column;
+        box-shadow: none;
     }
     .Time--Local {
         height: 125px;
@@ -1522,6 +1465,7 @@ input:checked + .slider:before {
     .Time--SunInfo {
         width: 100%;
         border: 5px solid #1E202Bff;
+        border-bottom: 5px solid rgb(25, 26, 34);
         border-top: none;
         display: flex;
         flex-direction: column;
@@ -1552,6 +1496,454 @@ input:checked + .slider:before {
     }
     .konvajs-content > canvas {
         width: 90%;
+    }
+}
+
+.Home--Hero {
+    background-image: url('/images/Hurricane.jpg');
+    background-size: cover;
+    background-position: center;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    padding: 40px;
+    box-shadow: 0px 0px 15px 0px black;
+}
+
+.Home--Hero--Weather {
+    background-color: white;
+    backdrop-filter: blur(10px);
+    opacity: 0.6;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px white;
+    width: 928px;
+    height: 462px;
+    max-width: 928px;
+}
+
+.Home--Hero--1 {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    backdrop-filter: none;
+}
+
+.Home--Hero--1Head {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    width: 100%;
+    height: 100%;
+}
+
+.Home--Hero--1Head1 {
+    color: black;
+    font-size: 1.4rem;
+    margin: 0px;
+    margin-top: 10px;
+    margin-left: 15px;
+}
+
+.Home--Hero--1Head2 {
+    color: black;
+    font-size: 3rem;
+    margin: 0px;
+    margin-left: 15px;
+}
+
+.Home--Hero--2 {
+    width: 100%;
+    height: 200px;
+    display: flex;
+}
+
+.Home--Weather--2 {
+    width: 232px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.Home--Weather--2--Header {
+    margin: 0;
+    color: #019BD8ff;
+    font-size: 78px;
+}
+
+.Home--Weather--2--Body {
+    color: black;
+    margin: 0;
+    font-size: 24px;
+}
+
+.Home--Weather--3 {
+    width: 232px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.Home--Weather--3--Icon--Container {
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(45deg, #019BD8ff, rgb(26, 112, 224));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.Home--Weather--3--Description {
+    margin: 0px;
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+    text-align: center;
+}
+
+.Home--Weather--4 {
+    width: 232px;
+    height: 200px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+}
+
+.Home--Weather--4 > p {
+    font-size: 1.2rem;
+    margin: 8px;
+    margin-left: 10px;
+    color: black;
+}
+
+.Home--Weather--5--Container {
+    width: 232px;
+    height: 200px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+}
+
+.Home--Weather--5--Container > p {
+    margin: 2px;
+    font-size: 24px;
+    color: black;
+}
+
+.Home--Weather--5--Container > h3 {
+    margin: 2px;
+    color: #019BD8ff;
+    font-size: 36px;
+}
+
+.Home--Hero--3 {
+    width: 100%;
+    height: 162px;
+    display: flex;
+}
+
+.Home--Time--Local {
+    height: 162px;
+    width: 250px;
+    padding: 10px;  
+}
+
+.Home--Time--Local--Header {
+    font-size: 1.5rem;
+    margin: 5px;
+    margin-left: 15px;
+    color: black;
+}
+
+.Home--Time--Local--Time {
+    margin: 0px;
+    margin-top: 12px;
+    margin-left: 15px;
+    font-size: 3rem;
+    font-weight: bold;
+    color: black;
+}
+
+.Home--Time--SunInfo {
+    height: 162px;
+    width: 500px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+}
+
+.Home--Sunrise--Sunset {
+    display: flex;
+    margin: 0;
+    margin-bottom: 5px;
+}
+
+.Home--Sunrise--Sunset > p:first-child {
+    margin: 10px 15px 15px 15px;
+    color: #019BD8;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.Home--Sunrise--Sunset > p:nth-child(2) {
+    margin: 10px 10px 15px 10px;
+    color: #1AC5E0;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.Home--Sunrise--Sunset--Extra {
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+
+}
+
+.Home--Sunrise--Sunset--Extra > p {
+    font-size: 1.2rem;
+    margin: 5px;
+    margin-top: 0px;
+    color: black;
+}
+
+.Home--Hero--Alternate {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+}
+
+.Home--Hero--Alternate > h1 {
+    font-size: 3rem;
+    color: black;
+    text-align: center;
+    margin-top: 100px;
+}
+
+.Home--Hero--Alternate > p {
+    font-size: 1.4rem;
+    color: black;
+    margin: 5px;
+    text-align: center;
+}
+
+
+
+@media (min-width: 929px) and (max-width: 950px){
+    .Home--Hero--Weather {
+        width: 90vw;
+    }
+
+    .Home--Weather--4 > p {
+        font-size: 1.1rem;
+        margin: 4px 0px;
+    }
+}
+
+@media (min-width: 767px) and (max-width: 928px) {
+    .Home--Hero--Weather {
+        width: 90vw;
+    }
+
+    .Home--Weather--5--Container {
+        width: 180px;
+        height: 200px;
+        padding: 0px;
+    }
+    
+    .Home--Weather--5--Container > p {
+        font-size: 18px;
+    }
+    
+    .Home--Weather--5--Container > h3 {
+        font-size: 32px;
+    }
+
+    .Home--Weather--4 > p {
+        font-size: 1.1rem;
+        margin: 4px 0px;
+    }
+
+    .Home--Weather--4 {
+        height: 200px;
+        padding: 0px;
+    }
+}
+
+@media (max-width: 767px) {
+    .Home--Hero {
+        padding: 20px;
+    }
+
+    .Home--Hero--Weather {
+        width: 100vw;
+        height: 542px;
+    }
+
+    .Home--Hero--1Head1 {
+        font-size: 1rem;
+        margin-top: 10px;
+        margin-left: 0px;
+    }
+    
+    .Home--Hero--1Head2 {
+        font-size: 2rem;
+        margin: 0px;
+        margin-left: 0px;
+        margin-top: 6px;
+    }
+
+    .Home--Hero--2 {
+        width: 100%;
+        height: 200px;
+        display: grid;
+        grid-template-columns: 33.3% 26.7% 40%;
+        grid-template-rows: 120px 120px;
+    }
+    .Home--Weather--2 {
+        grid-column: 1;
+        grid-row: 1;
+        width: 100%;
+        height: 100%;
+    }
+    
+    .Home--Weather--2--Header {
+        font-size: 40px;
+    }
+    
+    .Home--Weather--2--Body {
+        margin-top: 10px;
+        font-size: 16px;
+    }
+    
+    .Home--Weather--3 {
+        grid-column: 2 / 4;
+        grid-row: 1;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+    }
+    
+    .Home--Weather--3--Icon--Container {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .Home--Weather--3--Description {
+        margin: 0px;
+        margin-top: 0px;
+        font-size: 1.2rem;
+    }
+    
+    .Home--Weather--4 {
+        width: 100%;
+        height: 100%;
+        grid-column: 1 / 3;
+        grid-row: 2;
+    }
+    
+    .Home--Weather--4 > p {
+        font-size: 1rem;
+        margin: 2px;
+        margin-left: 0px;
+    }
+    
+    .Home--Weather--5--Container {
+        width: 100%;
+        height: 100%;
+        grid-column: 3 / 4;
+        grid-row: 2;
+    }
+    
+    .Home--Weather--5--Container > p {
+        font-size: 1rem;
+    }
+    
+    .Home--Weather--5--Container > h3 {
+        font-size: 24px;
+    }
+
+    .Home--Hero--3 {
+        width: 100vw;
+        height: 287px;
+        display: flex;
+        flex-direction: column;
+    }
+    .Home--Time--Local {
+        height: 100px;
+        width: 100%;
+        padding-top: 20px;
+        padding-bottom: 0px;
+    }
+    
+    .Home--Time--Local--Header {
+        font-size: 1.2rem;
+        margin: 5px;
+    }
+    
+    .Home--Time--Local--Time {
+        margin: 0px;
+        margin-top: 10px;
+        font-size: 2.5rem;
+    }
+    .Home--Time--SunInfo {
+        width: 100%;
+        border-top: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: start;
+    }
+    
+    .Home--Sunrise--Sunset {
+        display: flex;
+        margin: 0;
+        margin-bottom: 5px;
+    }
+    
+    .Home--Sunrise--Sunset > p:first-child {
+        margin: 10px 15px 15px 15px;
+        font-size: 1rem;
+    }
+    
+    .Home--Sunrise--Sunset > p:nth-child(2) {
+        margin: 10px 10px 15px 10px;
+        font-size: 1rem;
+    }
+    .Home--Sunrise--Sunset--Extra > p {
+        font-size: 1rem;
+    }
+    .konvajs-content {
+        width: 90%;
+    }
+    .konvajs-content > canvas {
+        width: 90%;
+    }
+    .Home--Hero--Alternate {
+        width: 100%;
+        height: 100%;
+        padding: 10px;
     }
 }
 

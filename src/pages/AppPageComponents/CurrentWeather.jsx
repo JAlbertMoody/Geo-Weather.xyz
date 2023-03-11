@@ -5,7 +5,7 @@ const apikey = process.env.REACT_APP_API_KEY;
 function CurrentWeather({ coordinates }) {
   const [weatherData, setWeatherData] = useState(null);
   const [city, setCity] = useState(null);
-  const units = useState(JSON.parse(localStorage.getItem("units")) || false);
+  const units = useState(JSON.parse(localStorage.getItem("units")) || false); 
 
   useEffect(() => {
     async function fetchWeatherData() {
