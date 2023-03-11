@@ -37,7 +37,7 @@ export default function HomeDesktop() {
                 </div>
             </div>
             <div className='Twitter'>
-                <Tweet tweetId="1633661914638319616" 
+                <Tweet tweetId="1634446753536811009" 
                     options={{theme: 'dark'}}
                 />
             </div>
